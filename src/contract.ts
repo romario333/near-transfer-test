@@ -13,8 +13,11 @@ class TransferTest {
 
     let promise = NearPromise.new(receiverAccountId).transfer(amount);
 
+    // this doesn't work:
     promise.then(NearPromise.new(receiverAccountId).transfer(amount));
-    // this works: promise = promise.then(NearPromise.new(receiverAccountId).transfer(amount));
+    
+    // this works: 
+    // promise = promise.then(NearPromise.new(receiverAccountId).transfer(amount));
 
     return promise;
   }
